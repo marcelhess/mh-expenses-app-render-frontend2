@@ -7,10 +7,11 @@ export default defineConfig({
    plugins: [react(), tailwindcss()],
    base: "/", // Set base path for root deployment
    build: {
+      outDir: "dist",
       rollupOptions: {
          input: "index.html", // Explicit input for SPA
          external: [],
       },
    },
-   publicDir: "public", // Ensure public directory files are copied
+   publicDir: "public", // Ensure public directory files are copied (includes _redirects)
 });
