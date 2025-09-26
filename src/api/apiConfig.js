@@ -3,7 +3,7 @@ import { tokenStorage } from "../utils/secureStorage";
 import { parseError, logError, ERROR_TYPES, ERROR_SEVERITY } from "../utils/errorHandler";
 
 // Define the base URL from environment variables with fallback
-const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:5000";
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "https://mh-expenses-app-render-backend.onrender.com";
 export const BASE_URL = `${API_BASE_URL}/api/v1`;
 
 // Create axios instance with base URL
