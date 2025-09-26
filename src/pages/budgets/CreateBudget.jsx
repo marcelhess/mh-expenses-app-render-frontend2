@@ -23,6 +23,7 @@ import { createBudget, getBudgets } from "../../api/budgetApi";
 import { getExpenseCategories } from "../../api/expenseApi";
 import { useAuth } from "../../context/AuthContext";
 import { tokenStorage } from "../../utils/secureStorage";
+import { BASE_URL } from "../../api/apiConfig";
 
 const CreateBudget = () => {
   const navigate = useNavigate();
@@ -136,7 +137,7 @@ const CreateBudget = () => {
       }
 
       const response = await fetch(
-        "http://localhost:5000/api/v1/budgets?limit=5",
+        `${BASE_URL}/budgets?limit=5`,
         {
           method: "GET",
           headers: {
@@ -350,7 +351,7 @@ const CreateBudget = () => {
       };
 
       // Make direct fetch call to API
-      const response = await fetch("http://localhost:5000/api/v1/budgets", {
+      const response = await fetch(`${BASE_URL}/budgets`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
