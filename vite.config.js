@@ -5,9 +5,10 @@ import tailwindcss from "@tailwindcss/vite";
 // https://vite.dev/config/
 export default defineConfig({
    plugins: [react(), tailwindcss()],
+   base: "/", // Set base path for root deployment
    build: {
       rollupOptions: {
-         // Ensure _redirects file is copied to dist
+         input: "index.html", // Explicit input for SPA
          external: [],
       },
    },
