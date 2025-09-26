@@ -25,12 +25,10 @@ export const AuthProvider = ({ children }) => {
                const storedUser = tokenStorage.getUser();
                if (storedUser) {
                   setUser(storedUser);
-                  setIsAuthenticated(true);
                } else {
                   // If we have token but no user data, fetch it
                   const { data } = await getCurrentUser();
                   setUser(data);
-                  setIsAuthenticated(true);
                }
             } catch (err) {
                // Error handled by error context
